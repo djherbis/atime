@@ -11,6 +11,10 @@ script:
   - $HOME/gopath/bin/golint ./...
   - go vet
   - go test -v ./...
+os:
+  - linux
+  - osx
+  - windows
 notifications:
   email:
     on_success: never
