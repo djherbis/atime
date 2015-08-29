@@ -10,6 +10,8 @@ Usage
 ------------
 File Access Times for #golang
 
+Looking for ctime or btime? Checkout https://github.com/djherbis/times
+
 Go has a hidden atime function for most platforms, this repo makes it accessible.
 
 ```go
