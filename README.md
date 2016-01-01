@@ -2,6 +2,7 @@ atime
 ==========
 
 [![GoDoc](https://godoc.org/github.com/djherbis/atime?status.svg)](https://godoc.org/github.com/djherbis/atime)
+[![Release](https://img.shields.io/github/release/djherbis/atime.svg)](https://github.com/djherbis/atime/releases/latest)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.txt)
 [![Build Status](https://travis-ci.org/djherbis/atime.svg?branch=master)](https://travis-ci.org/djherbis/atime)
 [![Coverage Status](https://coveralls.io/repos/djherbis/atime/badge.svg?branch=master)](https://coveralls.io/r/djherbis/atime?branch=master)
