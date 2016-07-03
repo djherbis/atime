@@ -6,8 +6,9 @@ import (
 	"time"
 )
 
-// Satisfies io.Reader, Closer, and Seeker. Stats the file before
-// opening it and restores the mtime and atime when closing it.
+// FileReadCloser satisfies io.Reader, Closer, and Seeker. Stats the
+// file before opening it and restores the mtime and atime when
+// closing it.
 type FileReadCloser struct {
 	f            *os.File
 	mtime, atime time.Time
@@ -46,7 +47,9 @@ func (a FileReadCloser) Close() error {
 	return os.Chtimes(path, a.atime, a.mtime)
 }
 
-func WithTimesRestored(path string, fn func(io.Reader) error) error {
+// WithTimesRestored opens the named file, passes it to a callback,
+// and closes it afterward, restoring its atime and mtime.
+func WithTimesRestored(path string, fn func(io.ReadSeeker) error) error {
 	r, err := NewFileReadCloser(path)
 	if err != nil {
 		return err

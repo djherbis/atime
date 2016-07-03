@@ -41,7 +41,7 @@ func TestWithTimesRestored(t *testing.T) {
 
 	closeAndSetTimes(t, f, et)
 
-	WithTimesRestored(name, func(r io.Reader) error {
+	WithTimesRestored(name, func(r io.ReadSeeker) error {
 		expectATimeUpdate(t, r, name, et)
 		return nil
 	})
