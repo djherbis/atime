@@ -6,8 +6,8 @@ import (
 	"time"
 )
 
-// Satisfies io.ReadCloser. Stats the file before opening it and
-// restores the mtime and atime when closing it.
+// Satisfies io.Reader, Closer, and Seeker. Stats the file before
+// opening it and restores the mtime and atime when closing it.
 type FileReadCloser struct {
 	f            *os.File
 	mtime, atime time.Time
@@ -31,6 +31,10 @@ func NewFileReadCloser(path string) (*FileReadCloser, error) {
 
 func (a FileReadCloser) Read(p []byte) (int, error) {
 	return a.f.Read(p)
+}
+
+func (a FileReadCloser) Seek(offset int64, whence int) (int64, error) {
+	return a.f.Seek(offset, whence)
 }
 
 func (a FileReadCloser) Close() error {
