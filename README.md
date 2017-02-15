@@ -7,6 +7,7 @@ atime
 [![Build Status](https://travis-ci.org/djherbis/atime.svg?branch=master)](https://travis-ci.org/djherbis/atime)
 [![Coverage Status](https://coveralls.io/repos/djherbis/atime/badge.svg?branch=master)](https://coveralls.io/r/djherbis/atime?branch=master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/djherbis/atime)](https://goreportcard.com/report/github.com/djherbis/atime)
+[![Sourcegraph](https://sourcegraph.com/github.com/djherbis/atime/-/badge.svg)](https://sourcegraph.com/github.com/djherbis/atime?badge)
 
 Usage
 ------------
