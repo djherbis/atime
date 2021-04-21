@@ -12,10 +12,11 @@ import (
 	"time"
 )
 
-func timespecToTime(ts int64) time.Time {
-	return time.Unix(int64(ts), 0)
+func timespecToTime(sec, nsec int64) time.Time {
+	return time.Unix(sec, nsec)
 }
 
 func atime(fi os.FileInfo) time.Time {
-	return timespecToTime(fi.Sys().(*syscall.Stat_t).Atime)
+	stat := fi.Sys().(*syscall.Stat_t)
+	return timespecToTime(stat.Atime, stat.AtimeNsec)
 }
